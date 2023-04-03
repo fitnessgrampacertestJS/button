@@ -1,0 +1,20 @@
+const imageArray = [
+  "https://img.itch.zone/aW1nLzU0MDUwNTMuanBn/original/Knj9UY.jpg",
+  "https://static.tvtropes.org/pmwiki/pub/images/main_menu_heavy.png",
+  "https://images.voicy.network/Content/Clips/Images/e61f29bb-f45b-43d2-a777-bac088821317-small.jpeg?auto=compress&auto=format&h=200",
+  "https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png",
+  "https://i.kym-cdn.com/photos/images/facebook/001/240/860/528.png",
+  "https://thumbs.gfycat.com/SpiritedThankfulDunlin-max-1mb.gif",
+  "https://b.fssta.com/uploads/application/wwe/headshots/dwayne-the-rock-johnson.png",
+];
+
+const image = document.querySelector("img");
+const button = document.querySelector("button");
+
+window.onload = () => generateRandomPicture(imageArray);
+
+button.addEventListener("click", () => generateRandomPicture(imageArray));
+
+function generateRandomPicture(array){
+  let randomNum = Math.floor(Math.random() * array.length); 
+  image.setAttribute("src", array[randomNum]);
